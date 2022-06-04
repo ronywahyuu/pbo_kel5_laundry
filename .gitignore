@@ -1,7 +1,1 @@
-*/target/**
-target/test-classes/.netbeans_automatic_build
-target/classes/Authentication/**
-target/classes/Authentication/Signup.form
-target/classes/Authentication/Signup.class
-target/classes/Authentication/Login.form
-target/classes/Authentication/Login.class
+/target
