@@ -1,3 +1,5 @@
+package Config;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,6 +24,7 @@ public class Dbconn {
                 String password_database = "";
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());//inti koneksi
                 koneksi = DriverManager.getConnection(alamat_url, user_database,password_database);
+//                JOptionPane.showMessageDialog(null, "Koneksi Berhasil");
             } catch (Exception e) {
                 //koneksi error
                 JOptionPane.showMessageDialog(null,"Konkesi Gagal "+ e.getMessage());
