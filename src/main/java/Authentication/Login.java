@@ -160,9 +160,6 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = hubung.createStatement().executeQuery(sql);   
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "Login Berhasil");
-<<<<<<< HEAD:src/main/java/Login.java
-                // new Menu().setVisible(true);
-=======
 //                new Menu().setVisible(true);
                   Menu menu_user = new Menu();
                   menu_user.setVisible(true);
@@ -172,7 +169,6 @@ public class Login extends javax.swing.JFrame {
                   
                   menu_user.labelNama.setText(rs.getString("name").toUpperCase());
                   
->>>>>>> a4746119476d136c4af4d8a90b1e108014ffabff:src/main/java/Authentication/Login.java
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Username atau Password Salah");
