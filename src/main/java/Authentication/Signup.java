@@ -1,7 +1,11 @@
+package Authentication;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import Config.Dbconn;
+import Authentication.Login;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -39,7 +43,7 @@ public class Signup extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        signup_img.setIcon(new javax.swing.ImageIcon("E:\\Document\\Projects\\rz_repo_java\\pbo_kel5_laundry\\src\\main\\java\\2150.png")); // NOI18N
+        signup_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2150.png"))); // NOI18N
         signup_img.setText("jLabel1");
 
         signup_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

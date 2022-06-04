@@ -1,7 +1,13 @@
+package Authentication;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import Main.Menu;
+import Config.Dbconn;
+import Main.History;
+import Main.PriceList;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -39,9 +45,10 @@ public class Login extends javax.swing.JFrame {
         login_btn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
         setResizable(false);
 
-        login_img.setIcon(new javax.swing.ImageIcon("E:\\Document\\Projects\\rz_repo_java\\pbo_kel5_laundry\\src\\main\\java\\2150.png")); // NOI18N
+        login_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2150.png"))); // NOI18N
         login_img.setText("jLabel1");
 
         login_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -79,36 +86,34 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(login_img, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(login_title)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(login_passlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(login_userlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(login_userinput)
-                                    .addComponent(login_passinput)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(login_btn)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addComponent(login_title1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(login_btn1)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(login_img, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(login_title)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(login_passlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(login_userlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(login_userinput)
+                                        .addComponent(login_passinput)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(14, 14, 14)
+                                    .addComponent(login_btn)
+                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,16 +144,35 @@ public class Login extends javax.swing.JFrame {
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
         // TODO add your handling code here:
+        login();
+    }//GEN-LAST:event_login_btnActionPerformed
+
+    
+    private void loggedInName(String name){
+        String show_name = name;
+    }
+    private void login(){
         try {
             String user = login_userinput.getText();
             String pass = login_passinput.getText();
-            String sql = "SELECT * FROM users WHERE name = '"+user+"' AND password = '"+pass+"'";
+            String sql = "SELECT * FROM users WHERE name = ('"+user+"') AND password = ('"+pass+"')";
             Connection hubung = (Connection)Dbconn.configDB();
-            ResultSet rs = hubung.createStatement().executeQuery(sql);
-
+            ResultSet rs = hubung.createStatement().executeQuery(sql);   
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "Login Berhasil");
+<<<<<<< HEAD:src/main/java/Login.java
                 // new Menu().setVisible(true);
+=======
+//                new Menu().setVisible(true);
+                  Menu menu_user = new Menu();
+                  menu_user.setVisible(true);
+                  
+//                  new History().setVisible(true);
+//                  this.dispose();
+                  
+                  menu_user.labelNama.setText(rs.getString("name").toUpperCase());
+                  
+>>>>>>> a4746119476d136c4af4d8a90b1e108014ffabff:src/main/java/Authentication/Login.java
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Username atau Password Salah");
@@ -157,8 +181,8 @@ public class Login extends javax.swing.JFrame {
         catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_login_btnActionPerformed
-
+    }
+    
     private void login_userinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_userinputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_login_userinputActionPerformed
