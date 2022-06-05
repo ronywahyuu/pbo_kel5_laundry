@@ -142,7 +142,7 @@ public class PriceList extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Jenis Layanan", "harga"
+                "Jenis Layanan", "Harga"
             }
         ) {
             Class[] types = new Class [] {

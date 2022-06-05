@@ -27,7 +27,7 @@ public class Dbconn {
 //                JOptionPane.showMessageDialog(null, "Koneksi Berhasil");
             } catch (Exception e) {
                 //koneksi error
-                JOptionPane.showMessageDialog(null,"Konkesi Gagal "+ e.getMessage());
+                JOptionPane.showMessageDialog(null,"Koneksi Gagal "+ e.getMessage());
             }
     return koneksi;
     
