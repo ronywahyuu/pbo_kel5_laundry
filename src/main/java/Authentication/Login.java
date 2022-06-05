@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 153, 255));
         setResizable(false);
 
-        login_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2150.png"))); // NOI18N
+        login_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2150.png"))); // NOI18N
         login_img.setText("jLabel1");
 
         login_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

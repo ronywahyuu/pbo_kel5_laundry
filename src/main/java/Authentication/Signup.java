@@ -43,7 +43,7 @@ public class Signup extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        signup_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2150.png"))); // NOI18N
+        signup_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2150.png"))); // NOI18N
         signup_img.setText("jLabel1");
 
         signup_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -173,7 +173,7 @@ public class Signup extends javax.swing.JFrame {
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-           signup_titlelogging.Logger.getLogger(Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+           java.util.logging.Logger.getLogger(Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
