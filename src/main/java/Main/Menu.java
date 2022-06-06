@@ -11,9 +11,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultComboBoxModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -85,12 +87,20 @@ public class Menu extends javax.swing.JFrame {
         update_layanan = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         hapus_layanan = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        setid_layanan = new javax.swing.JTextField();
         Sidebar = new javax.swing.JPanel();
         btnPriceList = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Laundry Management");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         TopBarPanel.setBackground(new java.awt.Color(50, 147, 131));
         TopBarPanel.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,7 +131,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(welcomeMsg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelNama)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1708, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1080, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(17, 17, 17))
         );
@@ -173,7 +183,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setText("Layanan");
 
-        input_layanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih layanan", "Dry Clean", "Cuci Setrika", "Cuci Selimut", "Cuci Bed Cover", "Pickup & Delivery" }));
         input_layanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_layananActionPerformed(evt);
@@ -437,6 +446,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("ID");
+
         javax.swing.GroupLayout edit_pricelistLayout = new javax.swing.GroupLayout(edit_pricelist);
         edit_pricelist.setLayout(edit_pricelistLayout);
         edit_pricelistLayout.setHorizontalGroup(
@@ -444,7 +456,12 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(edit_pricelistLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(edit_pricelistLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(setid_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(edit_pricelistLayout.createSequentialGroup()
                         .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -463,7 +480,10 @@ public class Menu extends javax.swing.JFrame {
             edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edit_pricelistLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jLabel3)
+                .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(setid_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -669,6 +689,27 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         defaultForm(false);
         Order.setVisible(true);
+
+        bersihkan();
+        input_layanan.setEnabled(true);
+        input_berat.setEditable(true);
+
+        DefaultComboBoxModel cb = new DefaultComboBoxModel();
+        try{
+            String cbSQL = "SELECT * FROM jenis";
+            Connection hubung = (Connection)Dbconn.configDB();
+            Statement s = hubung.createStatement();
+            ResultSet r = s.executeQuery(cbSQL);
+            cb.removeAllElements();
+            cb.addElement("Pilih layanan");
+            while(r.next()){
+                cb.addElement(r.getString("pakaian"));
+            }
+            input_layanan.setModel(cb);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void bayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarActionPerformed
@@ -755,10 +796,14 @@ public class Menu extends javax.swing.JFrame {
         
         int baris = tblPriceList.rowAtPoint(evt.getPoint());
         
-        String layanan = tblPriceList.getValueAt(baris, 0).toString();
+        String id = tblPriceList.getValueAt(baris, 0).toString();
+        setid_layanan.setText(id);
+        setid_layanan.setVisible(false);
+        
+        String layanan = tblPriceList.getValueAt(baris, 1).toString();
         edit_layanan.setText(layanan);
         
-        String harga_layanan = tblPriceList.getValueAt(baris, 1).toString();
+        String harga_layanan = tblPriceList.getValueAt(baris, 2).toString();
         edit_harga.setText(harga_layanan);
         
     }//GEN-LAST:event_tblPriceListMouseClicked
@@ -806,6 +851,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void update_layananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_layananMouseClicked
         // TODO add your handling code here:
+        String check_id = setid_layanan.getText();
         String update_layanan = edit_layanan.getText();
         String update_harga = edit_harga.getText();
         
@@ -816,7 +862,7 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Tetapkan Harga Terlebih Dahulu!");
         }else{
             try {
-                String Vsql = "UPDATE jenis SET pakaian = '"+update_layanan+"',harga = '"+update_harga+"' WHERE pakaian = '"+update_layanan+"'";
+                String Vsql = "UPDATE jenis SET pakaian = '"+update_layanan+"',harga = '"+update_harga+"' WHERE id = '"+check_id+"'";
                 java.sql.Connection Vconn = (Connection)Dbconn.configDB();
                 java.sql.PreparedStatement pst = Vconn.prepareStatement(Vsql);
                 pst.execute();
@@ -831,6 +877,29 @@ public class Menu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_update_layananMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon("src/main/java/Images/main_icon.png");
+        setIconImage(icon.getImage());
+        
+        DefaultComboBoxModel cb = new DefaultComboBoxModel();
+        try{
+            String cbSQL = "SELECT * FROM jenis";
+            Connection hubung = (Connection)Dbconn.configDB();
+            Statement s = hubung.createStatement();
+            ResultSet r = s.executeQuery(cbSQL);
+            cb.removeAllElements();
+            cb.addElement("Pilih layanan");
+            while(r.next()){
+                cb.addElement(r.getString("pakaian"));
+            }
+            input_layanan.setModel(cb);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_formWindowActivated
     private void tampilan_table(){
             //membuat objek model pada table
             //DefaultTableModel salah satu class table yang sudah ada di java
@@ -951,7 +1020,7 @@ public class Menu extends javax.swing.JFrame {
     
     private void showPriceListData(){
         DefaultTableModel table = new DefaultTableModel();
-//        table.addColumn("ID");
+        table.addColumn("ID");
         table.addColumn("Jenis Layanan");
         table.addColumn("Harga");
         
@@ -968,7 +1037,7 @@ public class Menu extends javax.swing.JFrame {
             
             while (rs.next()) {
                 table.addRow(new Object[]{
-                   rs.getString(2), rs.getString(3)
+                   rs.getString(1), rs.getString(2), rs.getString(3)
                 });
                 
             }
@@ -1051,23 +1120,6 @@ public class Menu extends javax.swing.JFrame {
             public void run() {
 //                JComboBox contoh_layanan = new JComboBox();
                 try{
-//                      //1. Query datanya
-//                        //insert ke database dari variabel Nm sama kota
-//                        String Q = "SELECT * FROM jenis";
-//
-//                        //2. Panggil fungsi koneksi
-//                        Connection hubung = (Connection)Dbconn.configDB();
-//
-//                        //3. Mengirimkan parameter fungsi java ke SQL
-////                        PreparedStatement s = hubung.prepareStatement(Q);
-//
-//                        //4. Execute Query
-//                        ResultSet rs = hubung.createStatement().executeQuery(Q);
-//                        
-//                        while(rs.next())
-//                            {
-//                                contoh_layanan.addItem(rs.getString(2));
-//                            }
 
                 }catch (Exception e) {
                     
@@ -1113,10 +1165,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton kosongkan;
     public javax.swing.JLabel labelNama;
+    private javax.swing.JTextField setid_layanan;
     private javax.swing.JTable tblHistoryData;
     private javax.swing.JTable tblPriceList;
     private javax.swing.JTextField total_harga;
