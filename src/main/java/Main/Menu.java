@@ -51,7 +51,7 @@ public class Menu extends javax.swing.JFrame {
         TopBarPanel = new javax.swing.JPanel();
         labelNama = new javax.swing.JLabel();
         welcomeMsg = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         MainContainer = new javax.swing.JPanel();
         Order = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -119,13 +119,13 @@ public class Menu extends javax.swing.JFrame {
         welcomeMsg.setForeground(new java.awt.Color(255, 255, 255));
         welcomeMsg.setText("SELAMAT DATANG,");
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(255, 51, 51));
+        logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("Logout");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
 
@@ -139,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelNama)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1080, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(logout)
                 .addGap(17, 17, 17))
         );
         TopBarPanelLayout.setVerticalGroup(
@@ -149,7 +149,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(TopBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(welcomeMsg)
                     .addComponent(labelNama)
-                    .addComponent(jButton1))
+                    .addComponent(logout))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -712,12 +712,17 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-        new Login().setVisible(true);
-        this.dispose();
+        int option = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin untuk keluar?", "Perhatian", JOptionPane.YES_NO_OPTION);
+        if(option == 0){
+            new Login().setVisible(true);
+            this.dispose();
+        }else{
+            
+        }
                 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     private void btnPriceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPriceListActionPerformed
         // TODO add your handling code here:
@@ -1295,7 +1300,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField input_hp;
     private javax.swing.JComboBox<String> input_layanan;
     private javax.swing.JTextField input_nama;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1315,6 +1319,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton kosongkan;
     public javax.swing.JLabel labelNama;
+    private javax.swing.JButton logout;
     private javax.swing.JTextField setid_layanan;
     private javax.swing.JTable tblHistoryData;
     private javax.swing.JTable tblPriceList;
