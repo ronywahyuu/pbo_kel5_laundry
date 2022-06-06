@@ -138,6 +138,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\logout.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Logout"/>
           </Properties>
           <Events>
@@ -479,6 +482,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\calculate.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Hitung Total"/>
               </Properties>
               <Events>
@@ -511,6 +517,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="cc" red="33" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\bayar.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Bayar"/>
               </Properties>
               <Events>
@@ -521,6 +530,9 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\bersihkan.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Bersihkan "/>
               </Properties>
@@ -546,7 +558,10 @@
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="82" green="93" red="32" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Format: YYYY-MM-DD"/>
               </Properties>
@@ -573,7 +588,7 @@
                               <Component id="btnAddPriceList" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="829" max="32767" attributes="0"/>
+                      <EmptySpace pref="809" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -622,6 +637,9 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="cc" red="33" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\add.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tambah Layanan"/>
               </Properties>
@@ -811,6 +829,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="cc" red="33" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\add.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Tambah"/>
               </Properties>
               <Events>
@@ -915,6 +936,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\update.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
               <Events>
@@ -926,6 +950,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="82" green="93" red="32" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="EDIT PELAYANAN"/>
               </Properties>
             </Component>
@@ -933,6 +960,9 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="0" red="cc" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="D:\KULIAH SMT 4\PEMROGRAMAN BERORIENTASI OBJEK\CODE PBO\1. CODE UAS\FIX_bgt\pbo_kel5_laundry\src\main\java\Images\trash.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hapus"/>
               </Properties>

@@ -132,6 +132,7 @@ public class Menu extends javax.swing.JFrame {
         logout.setBackground(new java.awt.Color(204, 0, 0));
         logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\logout.png")); // NOI18N
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +225,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel17.setText("Total Harga");
 
         btn_bayar.setBackground(new java.awt.Color(255, 153, 0));
+        btn_bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\calculate.png")); // NOI18N
         btn_bayar.setText("Hitung Total");
         btn_bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,6 +245,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel18.setText("Jumlah Bayar");
 
         bayar.setBackground(new java.awt.Color(51, 204, 0));
+        bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\bayar.png")); // NOI18N
         bayar.setText("Bayar");
         bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +254,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         kosongkan.setBackground(new java.awt.Color(255, 102, 102));
+        kosongkan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\bersihkan.png")); // NOI18N
         kosongkan.setText("Bersihkan ");
         kosongkan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -263,7 +267,8 @@ public class Menu extends javax.swing.JFrame {
 
         input_tanggal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(50, 147, 130));
         jLabel20.setText("Format: YYYY-MM-DD");
 
         javax.swing.GroupLayout OrderLayout = new javax.swing.GroupLayout(Order);
@@ -405,6 +410,7 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblPriceList);
 
         btnAddPriceList.setBackground(new java.awt.Color(51, 204, 0));
+        btnAddPriceList.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddPriceList.setText("Tambah Layanan");
         btnAddPriceList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -428,7 +434,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnAddPriceList)))
-                .addContainerGap(829, Short.MAX_VALUE))
+                .addContainerGap(809, Short.MAX_VALUE))
         );
         PriceListLayout.setVerticalGroup(
             PriceListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -505,6 +511,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel9.setText("TAMBAH PELAYANAN");
 
         btnAddLayanan.setBackground(new java.awt.Color(51, 204, 0));
+        btnAddLayanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddLayanan.setText("Tambah");
         btnAddLayanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -565,6 +572,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         update_layanan.setBackground(new java.awt.Color(255, 153, 0));
+        update_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\update.png")); // NOI18N
         update_layanan.setText("Update");
         update_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -573,9 +581,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(50, 147, 130));
         jLabel3.setText("EDIT PELAYANAN");
 
         hapus_layanan.setBackground(new java.awt.Color(204, 0, 51));
+        hapus_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX_bgt\\pbo_kel5_laundry\\src\\main\\java\\Images\\trash.png")); // NOI18N
         hapus_layanan.setText("Hapus");
         hapus_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
