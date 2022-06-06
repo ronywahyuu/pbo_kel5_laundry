@@ -31,8 +31,9 @@ CREATE TABLE `history` (
   `berat` int(11) NOT NULL,
   `totalharga` int(11) NOT NULL,
   `bayar` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +42,7 @@ CREATE TABLE `history` (
 
 LOCK TABLES `history` WRITE;
 /*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` VALUES (2,'Rsadsd','asdasdasd',1231254123,'Delivery',2,32000,35000,'2022-06-06'),(3,'Rhizka','asd',1234,'Dry Clean',2,20000,30000,'2022-06-05');
 /*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,10 +55,10 @@ DROP TABLE IF EXISTS `jenis`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jenis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pakaian` varchar(32) NOT NULL,
+  `pakaian` varchar(64) NOT NULL,
   `harga` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +67,7 @@ CREATE TABLE `jenis` (
 
 LOCK TABLES `jenis` WRITE;
 /*!40000 ALTER TABLE `jenis` DISABLE KEYS */;
+INSERT INTO `jenis` VALUES (1,'Dry Clean',10000),(2,'Cuci Setrika',16000),(3,'Cuci Selimut',12000),(4,'Cuci Bed Cover',9500),(5,'Delivery',16000),(8,'Testing',25000);
 /*!40000 ALTER TABLE `jenis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +85,7 @@ CREATE TABLE `users` (
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +94,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Rhizka','test','2022-06-03');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -103,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-03  8:33:51
+-- Dump completed on 2022-06-06 12:10:52
