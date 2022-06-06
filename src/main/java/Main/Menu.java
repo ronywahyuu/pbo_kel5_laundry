@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -73,6 +75,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         bayar = new javax.swing.JButton();
         kosongkan = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        input_tanggal = new javax.swing.JFormattedTextField();
+        jLabel20 = new javax.swing.JLabel();
         PriceList = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblPriceList = new javax.swing.JTable();
@@ -127,7 +132,6 @@ public class Menu extends javax.swing.JFrame {
         logout.setBackground(new java.awt.Color(204, 0, 0));
         logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\logout.png")); // NOI18N
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +224,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel17.setText("Total Harga");
 
         btn_bayar.setBackground(new java.awt.Color(255, 153, 0));
-        btn_bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\calculate.png")); // NOI18N
         btn_bayar.setText("Hitung Total");
         btn_bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,7 +243,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel18.setText("Jumlah Bayar");
 
         bayar.setBackground(new java.awt.Color(51, 204, 0));
-        bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\bayar.png")); // NOI18N
         bayar.setText("Bayar");
         bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,13 +251,20 @@ public class Menu extends javax.swing.JFrame {
         });
 
         kosongkan.setBackground(new java.awt.Color(255, 102, 102));
-        kosongkan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\bersihkan.png")); // NOI18N
         kosongkan.setText("Bersihkan ");
         kosongkan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kosongkanMouseClicked(evt);
             }
         });
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel19.setText("Tanggal");
+
+        input_tanggal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setText("Format: YYYY-MM-DD");
 
         javax.swing.GroupLayout OrderLayout = new javax.swing.GroupLayout(Order);
         Order.setLayout(OrderLayout);
@@ -290,16 +299,21 @@ public class Menu extends javax.swing.JFrame {
                                 .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14)
-                                    .addComponent(jLabel15))
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel19))
                                 .addGap(91, 91, 91)
                                 .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(input_layanan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(input_hp, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, OrderLayout.createSequentialGroup()
-                                        .addComponent(input_berat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(input_tanggal, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(input_berat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel16)
-                                        .addGap(0, 334, Short.MAX_VALUE))))
+                                        .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16)
+                                            .addComponent(jLabel20))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OrderLayout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(97, 97, 97)
@@ -342,7 +356,12 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(input_berat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel15))
-                .addGap(51, 51, 51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(input_tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addGap(17, 17, 17)
                 .addGroup(OrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jLabel18))
@@ -386,7 +405,6 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblPriceList);
 
         btnAddPriceList.setBackground(new java.awt.Color(51, 204, 0));
-        btnAddPriceList.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddPriceList.setText("Tambah Layanan");
         btnAddPriceList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -487,7 +505,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel9.setText("TAMBAH PELAYANAN");
 
         btnAddLayanan.setBackground(new java.awt.Color(51, 204, 0));
-        btnAddLayanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddLayanan.setText("Tambah");
         btnAddLayanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -548,7 +565,6 @@ public class Menu extends javax.swing.JFrame {
         });
 
         update_layanan.setBackground(new java.awt.Color(255, 153, 0));
-        update_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\update.png")); // NOI18N
         update_layanan.setText("Update");
         update_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -560,7 +576,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setText("EDIT PELAYANAN");
 
         hapus_layanan.setBackground(new java.awt.Color(204, 0, 51));
-        hapus_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\trash.png")); // NOI18N
         hapus_layanan.setText("Hapus");
         hapus_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -677,7 +692,6 @@ public class Menu extends javax.swing.JFrame {
         btnPriceList.setBackground(new java.awt.Color(102, 141, 236));
         btnPriceList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnPriceList.setForeground(new java.awt.Color(255, 255, 255));
-        btnPriceList.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\daftar-harga.png")); // NOI18N
         btnPriceList.setText("Daftar Harga");
         btnPriceList.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnPriceList.addActionListener(new java.awt.event.ActionListener() {
@@ -689,7 +703,6 @@ public class Menu extends javax.swing.JFrame {
         btnHistory.setBackground(new java.awt.Color(102, 141, 236));
         btnHistory.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnHistory.setForeground(new java.awt.Color(255, 255, 255));
-        btnHistory.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\history.png")); // NOI18N
         btnHistory.setText("Riwayat Pesanan");
         btnHistory.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
@@ -701,7 +714,6 @@ public class Menu extends javax.swing.JFrame {
         btnOrder.setBackground(new java.awt.Color(102, 141, 236));
         btnOrder.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrder.setForeground(new java.awt.Color(255, 255, 255));
-        btnOrder.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\order.png")); // NOI18N
         btnOrder.setText("Order");
         btnOrder.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -821,28 +833,33 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
-        defaultForm(false);
-        Order.setVisible(true);
+        if(!Order.isVisible()){    
+            defaultForm(false);
+            Order.setVisible(true);
 
-        bersihkan();
-        input_layanan.setEnabled(true);
-        input_berat.setEditable(true);
+            bersihkan();
+            input_layanan.setEnabled(true);
+            input_berat.setEditable(true);
 
-        DefaultComboBoxModel cb = new DefaultComboBoxModel();
-        try{
-            String cbSQL = "SELECT * FROM jenis";
-            Connection hubung = (Connection)Dbconn.configDB();
-            Statement s = hubung.createStatement();
-            ResultSet r = s.executeQuery(cbSQL);
-            cb.removeAllElements();
-            cb.addElement("Pilih layanan");
-            while(r.next()){
-                cb.addElement(r.getString("pakaian"));
+            DefaultComboBoxModel cb = new DefaultComboBoxModel();
+            try{
+                String cbSQL = "SELECT * FROM jenis";
+                Connection hubung = (Connection)Dbconn.configDB();
+                Statement s = hubung.createStatement();
+                ResultSet r = s.executeQuery(cbSQL);
+                cb.removeAllElements();
+                cb.addElement("Pilih layanan");
+                while(r.next()){
+                    cb.addElement(r.getString("pakaian"));
+                }
+                input_layanan.setModel(cb);
+                LocalDate date = LocalDate.now();
+                DateTimeFormatter sqlformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                input_tanggal.setText(date.format(sqlformat).toString());
             }
-            input_layanan.setModel(cb);
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
         }
     }//GEN-LAST:event_btnOrderActionPerformed
 
@@ -855,6 +872,7 @@ public class Menu extends javax.swing.JFrame {
         String berat = input_berat.getText();
         String harga = total_harga.getText();
         String bayar = input_bayar.getText();
+        String tanggal = input_tanggal.getText();
         
         if(nama.equals("")){
             JOptionPane.showMessageDialog(null, "Isi Nama Terlebih Dahulu!");
@@ -870,13 +888,15 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Isi Harga Terlebih Dahulu!");
         }else if(bayar.equals("")){
             JOptionPane.showMessageDialog(null, "Isi Bayar Terlebih Dahulu!");
+        }else if(tanggal.equals("")){
+            JOptionPane.showMessageDialog(null, "Isi Tanggal Terlebih Dahulu!");
         }else if(Integer.parseInt(bayar) < Integer.parseInt(harga)){
             JOptionPane.showMessageDialog(null, "Jumlah nominal bayar tidak mencukupi!");
         }else{
             try {
                 //1. Query datanya
                 //insert ke database dari variabel Nm sama kota
-                String Q = "INSERT INTO history (pelanggan, alamat, telp, jenis, berat, totalharga, bayar) VALUES ('"+nama+"', '"+alamat+"', '"+no_hp+"', '"+layanan+"', '"+berat+"', '"+harga+"', '"+bayar+"')";
+                String Q = "INSERT INTO history (pelanggan, alamat, telp, jenis, berat, totalharga, bayar, tanggal) VALUES ('"+nama+"', '"+alamat+"', '"+no_hp+"', '"+layanan+"', '"+berat+"', '"+harga+"', '"+bayar+"', '"+tanggal+"')";
 
                 //2. Panggil fungsi koneksi
                 Connection hubung = (Connection)Dbconn.configDB();
@@ -1069,6 +1089,9 @@ public class Menu extends javax.swing.JFrame {
                 cb.addElement(r.getString("pakaian"));
             }
             input_layanan.setModel(cb);
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter sqlformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            input_tanggal.setText(date.format(sqlformat).toString());
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -1130,6 +1153,7 @@ public class Menu extends javax.swing.JFrame {
             tb.addColumn("berat");
             tb.addColumn("totalharga");
             tb.addColumn("bayar");
+            tb.addColumn("tanggal");
 
             //proses menampilkan data
             try{
@@ -1173,6 +1197,9 @@ public class Menu extends javax.swing.JFrame {
             input_berat.setText("");
             total_harga.setText("");
             input_bayar.setText("");
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter sqlformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            input_tanggal.setText(date.format(sqlformat).toString());
         }
     
     private void bersihkan_edit(){
@@ -1200,6 +1227,7 @@ public class Menu extends javax.swing.JFrame {
         table.addColumn("Berat (Kg)");
         table.addColumn("Total Harga");
         table.addColumn("Jumlah Bayar");
+        table.addColumn("Tanggal (YYYY-MM-DD)");
         try {
 //            int counter = 1;
             String query = "SELECT * FROM history";
@@ -1213,14 +1241,15 @@ public class Menu extends javax.swing.JFrame {
             
             while (rs.next()) {
                 table.addRow(new Object[]{
-                   rs.getString(1), 
-                   rs.getString(2),
-                   rs.getString(3),
-                  rs.getString(4),
-                  rs.getString(5),
-                  rs.getString(6),
-                  rs.getString(7),
-                  rs.getString(8),
+                    rs.getString(1), 
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7),
+                    rs.getString(8),
+                    rs.getString(9)
                 });
                 
             }
@@ -1376,6 +1405,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField input_hp;
     private javax.swing.JComboBox<String> input_layanan;
     private javax.swing.JTextField input_nama;
+    private javax.swing.JFormattedTextField input_tanggal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1386,7 +1416,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
