@@ -51,7 +51,7 @@ public class Signup extends javax.swing.JFrame {
             }
         });
 
-        signup_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2150.png"))); // NOI18N
+        signup_img.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\2150.png")); // NOI18N
         signup_img.setText("jLabel1");
 
         signup_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -68,6 +68,7 @@ public class Signup extends javax.swing.JFrame {
         });
 
         signup_btn.setBackground(new java.awt.Color(0, 204, 0));
+        signup_btn.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\sign-in.png")); // NOI18N
         signup_btn.setText("DAFTAR");
         signup_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,11 +96,9 @@ public class Signup extends javax.swing.JFrame {
                             .addComponent(signup_passlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(signup_userlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(signup_passinput, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(signup_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(signup_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(signup_passinput, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))))
                 .addContainerGap(83, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -125,9 +124,9 @@ public class Signup extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signup_passlabel)
                     .addComponent(signup_passinput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(signup_btn)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();

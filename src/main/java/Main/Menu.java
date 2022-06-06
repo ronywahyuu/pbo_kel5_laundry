@@ -77,9 +77,11 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblPriceList = new javax.swing.JTable();
         btnAddPriceList = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         History = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHistoryData = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
         add_pricelist = new javax.swing.JPanel();
         add_pelayanan = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -107,6 +109,9 @@ public class Menu extends javax.swing.JFrame {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
         });
 
         TopBarPanel.setBackground(new java.awt.Color(50, 147, 131));
@@ -119,9 +124,10 @@ public class Menu extends javax.swing.JFrame {
         welcomeMsg.setForeground(new java.awt.Color(255, 255, 255));
         welcomeMsg.setText("SELAMAT DATANG,");
 
-        logout.setBackground(new java.awt.Color(255, 51, 51));
+        logout.setBackground(new java.awt.Color(204, 0, 0));
         logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\logout.png")); // NOI18N
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,21 +142,28 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(TopBarPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(welcomeMsg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelNama)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1080, Short.MAX_VALUE)
-                .addComponent(logout)
-                .addGap(17, 17, 17))
+                .addGroup(TopBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TopBarPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelNama)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logout)
+                        .addGap(75, 75, 75))))
         );
         TopBarPanelLayout.setVerticalGroup(
             TopBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopBarPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(11, 11, 11)
                 .addGroup(TopBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(welcomeMsg)
-                    .addComponent(labelNama)
-                    .addComponent(logout))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(labelNama))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarPanelLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addGap(21, 21, 21))
         );
 
         MainContainer.setBackground(new java.awt.Color(204, 204, 204));
@@ -158,7 +171,8 @@ public class Menu extends javax.swing.JFrame {
         Order.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel10.setText("ORDER");
+        jLabel10.setForeground(new java.awt.Color(50, 147, 130));
+        jLabel10.setText("ORDER ");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Nama");
@@ -206,6 +220,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel17.setText("Total Harga");
 
         btn_bayar.setBackground(new java.awt.Color(255, 153, 0));
+        btn_bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\calculate.png")); // NOI18N
         btn_bayar.setText("Hitung Total");
         btn_bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +240,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel18.setText("Jumlah Bayar");
 
         bayar.setBackground(new java.awt.Color(51, 204, 0));
+        bayar.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\bayar.png")); // NOI18N
         bayar.setText("Bayar");
         bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +249,8 @@ public class Menu extends javax.swing.JFrame {
         });
 
         kosongkan.setBackground(new java.awt.Color(255, 102, 102));
-        kosongkan.setText("Kosongkan");
+        kosongkan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\bersihkan.png")); // NOI18N
+        kosongkan.setText("Bersihkan ");
         kosongkan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kosongkanMouseClicked(evt);
@@ -294,7 +311,7 @@ public class Menu extends javax.swing.JFrame {
                             .addGroup(OrderLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kosongkan, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(kosongkan)))))
                 .addGap(42, 42, 42))
         );
         OrderLayout.setVerticalGroup(
@@ -368,6 +385,8 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblPriceList);
 
+        btnAddPriceList.setBackground(new java.awt.Color(51, 204, 0));
+        btnAddPriceList.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddPriceList.setText("Tambah Layanan");
         btnAddPriceList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,28 +394,34 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(50, 147, 130));
+        jLabel4.setText("DAFTAR LAYANAN DAN HARGA");
+
         javax.swing.GroupLayout PriceListLayout = new javax.swing.GroupLayout(PriceList);
         PriceList.setLayout(PriceListLayout);
         PriceListLayout.setHorizontalGroup(
             PriceListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PriceListLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAddPriceList)
-                .addContainerGap(719, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(PriceListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PriceListLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAddPriceList)))
+                .addContainerGap(829, Short.MAX_VALUE))
         );
         PriceListLayout.setVerticalGroup(
             PriceListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PriceListLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
                 .addGroup(PriceListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PriceListLayout.createSequentialGroup()
-                        .addComponent(btnAddPriceList)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PriceListLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 789, Short.MAX_VALUE)
-                        .addGap(29, 29, 29))))
+                    .addComponent(btnAddPriceList, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         History.setBackground(new java.awt.Color(204, 204, 204));
@@ -422,22 +447,34 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblHistoryData);
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(50, 147, 130));
+        jLabel5.setText("RIWAYAT ORDER");
+
         javax.swing.GroupLayout HistoryLayout = new javax.swing.GroupLayout(History);
         History.setLayout(HistoryLayout);
         HistoryLayout.setHorizontalGroup(
             HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HistoryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1553, Short.MAX_VALUE)
+                .addGroup(HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1553, Short.MAX_VALUE)
+                    .addGroup(HistoryLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         HistoryLayout.setVerticalGroup(
             HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HistoryLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
-                .addGap(46, 46, 46))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HistoryLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
+
+        add_pricelist.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Jenis Layanan");
@@ -446,13 +483,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel8.setText("Harga");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel9.setText("ADD PELAYANAN");
+        jLabel9.setForeground(new java.awt.Color(50, 147, 130));
+        jLabel9.setText("TAMBAH PELAYANAN");
 
+        btnAddLayanan.setBackground(new java.awt.Color(51, 204, 0));
+        btnAddLayanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\add.png")); // NOI18N
         btnAddLayanan.setText("Tambah");
-
-        btnAddLayanan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddLayananActionPerformed(evt);
+        btnAddLayanan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddLayananMouseClicked(evt);
             }
         });
 
@@ -463,17 +502,18 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(add_pricelistLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(add_pricelistLayout.createSequentialGroup()
-                        .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(add_pelayanan, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(add_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddLayanan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnAddLayanan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(add_pricelistLayout.createSequentialGroup()
+                            .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(31, 31, 31)
+                            .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(add_pelayanan, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(add_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel9))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         add_pricelistLayout.setVerticalGroup(
             add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,10 +528,12 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(add_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(add_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(btnAddLayanan)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddLayanan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
+
+        edit_pricelist.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Jenis Layanan");
@@ -506,6 +548,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         update_layanan.setBackground(new java.awt.Color(255, 153, 0));
+        update_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\update.png")); // NOI18N
         update_layanan.setText("Update");
         update_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -516,6 +559,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("EDIT PELAYANAN");
 
+        hapus_layanan.setBackground(new java.awt.Color(204, 0, 51));
+        hapus_layanan.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\trash.png")); // NOI18N
         hapus_layanan.setText("Hapus");
         hapus_layanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -528,7 +573,7 @@ public class Menu extends javax.swing.JFrame {
         edit_pricelistLayout.setHorizontalGroup(
             edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edit_pricelistLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(50, 50, 50)
                 .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(edit_pricelistLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -542,16 +587,16 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(edit_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(edit_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(edit_pricelistLayout.createSequentialGroup()
-                                .addComponent(update_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edit_pricelistLayout.createSequentialGroup()
+                                .addComponent(update_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(hapus_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                                .addComponent(hapus_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         edit_pricelistLayout.setVerticalGroup(
             edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edit_pricelistLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(59, 59, 59)
                 .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(setid_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -565,9 +610,9 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(edit_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(edit_pricelistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(update_layanan)
-                    .addComponent(hapus_layanan))
-                .addContainerGap(46, Short.MAX_VALUE))
+                    .addComponent(update_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hapus_layanan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MainContainerLayout = new javax.swing.GroupLayout(MainContainer);
@@ -590,14 +635,14 @@ public class Menu extends javax.swing.JFrame {
                     .addGap(106, 106, 106)))
             .addGroup(MainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainContainerLayout.createSequentialGroup()
-                    .addGap(486, 486, 486)
+                    .addContainerGap()
                     .addComponent(edit_pricelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(750, Short.MAX_VALUE)))
+                    .addContainerGap(1170, Short.MAX_VALUE)))
             .addGroup(MainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainContainerLayout.createSequentialGroup()
-                    .addGap(618, 618, 618)
+                    .addGap(44, 44, 44)
                     .addComponent(add_pricelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(618, Short.MAX_VALUE)))
+                    .addContainerGap(1101, Short.MAX_VALUE)))
         );
         MainContainerLayout.setVerticalGroup(
             MainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -617,14 +662,14 @@ public class Menu extends javax.swing.JFrame {
                     .addGap(18, 18, 18)))
             .addGroup(MainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainContainerLayout.createSequentialGroup()
-                    .addGap(202, 202, 202)
+                    .addContainerGap()
                     .addComponent(edit_pricelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(385, Short.MAX_VALUE)))
+                    .addContainerGap(542, Short.MAX_VALUE)))
             .addGroup(MainContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainContainerLayout.createSequentialGroup()
-                    .addGap(295, 295, 295)
+                    .addGap(31, 31, 31)
                     .addComponent(add_pricelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(295, Short.MAX_VALUE)))
+                    .addContainerGap(580, Short.MAX_VALUE)))
         );
 
         Sidebar.setBackground(new java.awt.Color(50, 147, 130));
@@ -632,6 +677,7 @@ public class Menu extends javax.swing.JFrame {
         btnPriceList.setBackground(new java.awt.Color(102, 141, 236));
         btnPriceList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnPriceList.setForeground(new java.awt.Color(255, 255, 255));
+        btnPriceList.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\daftar-harga.png")); // NOI18N
         btnPriceList.setText("Daftar Harga");
         btnPriceList.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnPriceList.addActionListener(new java.awt.event.ActionListener() {
@@ -643,6 +689,7 @@ public class Menu extends javax.swing.JFrame {
         btnHistory.setBackground(new java.awt.Color(102, 141, 236));
         btnHistory.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnHistory.setForeground(new java.awt.Color(255, 255, 255));
+        btnHistory.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\history.png")); // NOI18N
         btnHistory.setText("Riwayat Pesanan");
         btnHistory.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
@@ -654,6 +701,7 @@ public class Menu extends javax.swing.JFrame {
         btnOrder.setBackground(new java.awt.Color(102, 141, 236));
         btnOrder.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrder.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrder.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\order.png")); // NOI18N
         btnOrder.setText("Order");
         btnOrder.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -667,12 +715,12 @@ public class Menu extends javax.swing.JFrame {
         SidebarLayout.setHorizontalGroup(
             SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SidebarLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPriceList, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPriceList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         SidebarLayout.setVerticalGroup(
             SidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -840,19 +888,24 @@ public class Menu extends javax.swing.JFrame {
                 s.execute();
 
                 //5. Validasi saat berhasil
-                JOptionPane.showMessageDialog(null, "Data Berhasil ditambahkan");
+                JOptionPane.showMessageDialog(null, "Data Order Berhasil ditambahkan");
                 
                 if (Integer.parseInt(bayar) > Integer.parseInt(harga)){
                     int kembalian = Integer.parseInt(bayar) - Integer.parseInt(harga);
-                    JOptionPane.showMessageDialog(null, "Kembalian Anda Rp"+Integer.toString(kembalian));
+                    JOptionPane.showMessageDialog(null, "Kembalian Rp "+Integer.toString(kembalian));
                 }
                 
                 input_layanan.setEnabled(true);
                 input_berat.setEditable(true);
+                
+//                showHistoryData();
+//                defaultForm(false);
+//                History.setVisible(true);
 
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Data gagal ditambahkan");
+                JOptionPane.showMessageDialog(null, "Data Order Gagal ditambahkan");
                 JOptionPane.showMessageDialog(this, e.getMessage());
+                
             }
             bersihkan();
         }
@@ -923,7 +976,7 @@ public class Menu extends javax.swing.JFrame {
                 stm.execute();
 
                 //5. Menampilkan notif berhasil
-                JOptionPane.showMessageDialog(null, "Hapus data berhasil");
+                JOptionPane.showMessageDialog(null, "Hapus data layanan berhasil");
 
                 //biar form langsung kosong
                 bersihkan_edit();
@@ -931,7 +984,7 @@ public class Menu extends javax.swing.JFrame {
                 defaultForm(false);
                 PriceList.setVisible(true);
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Hapus data gagal!");
+                JOptionPane.showMessageDialog(null, "Hapus data layanan gagal!");
                 JOptionPane.showMessageDialog(null, e.getMessage());
         }
         }
@@ -955,7 +1008,7 @@ public class Menu extends javax.swing.JFrame {
                 java.sql.Connection Vconn = (Connection)Dbconn.configDB();
                 java.sql.PreparedStatement pst = Vconn.prepareStatement(Vsql);
                 pst.execute();
-                JOptionPane.showMessageDialog(null, "Data berhasil diubah");
+                JOptionPane.showMessageDialog(null, "Data layanan berhasil diubah!");
                 
                 //fungsi untuk membersihkan form setelah input
                 bersihkan_edit();
@@ -963,14 +1016,66 @@ public class Menu extends javax.swing.JFrame {
                 defaultForm(false);
                 PriceList.setVisible(true);
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Data gagal diubah");
+                JOptionPane.showMessageDialog(null, "Data layanan gagal diubah!");
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }
         }
         
     }//GEN-LAST:event_update_layananMouseClicked
 
-    private void btnAddLayananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLayananActionPerformed
+    private void btnAddPriceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPriceListActionPerformed
+        // TODO add your handling code here:
+        defaultForm(false);
+        add_pricelist.setVisible(true);
+    }//GEN-LAST:event_btnAddPriceListActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+//        ImageIcon icon = new ImageIcon("src/main/java/Images/main_icon.png");
+//        setIconImage(icon.getImage());
+//        
+//        DefaultComboBoxModel cb = new DefaultComboBoxModel();
+//        try{
+//            String cbSQL = "SELECT * FROM jenis";
+//            Connection hubung = (Connection)Dbconn.configDB();
+//            Statement s = hubung.createStatement();
+//            ResultSet r = s.executeQuery(cbSQL);
+//            cb.removeAllElements();
+//            cb.addElement("Pilih layanan");
+//            while(r.next()){
+//                cb.addElement(r.getString("pakaian"));
+//            }
+//            input_layanan.setModel(cb);
+//        }
+//        catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e.getMessage());
+//        }
+    }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+         ImageIcon icon = new ImageIcon("src/main/java/Images/main_icon.png");
+        setIconImage(icon.getImage());
+        
+        DefaultComboBoxModel cb = new DefaultComboBoxModel();
+        try{
+            String cbSQL = "SELECT * FROM jenis";
+            Connection hubung = (Connection)Dbconn.configDB();
+            Statement s = hubung.createStatement();
+            ResultSet r = s.executeQuery(cbSQL);
+            cb.removeAllElements();
+            cb.addElement("Pilih layanan");
+            while(r.next()){
+                cb.addElement(r.getString("pakaian"));
+            }
+            input_layanan.setModel(cb);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnAddLayananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddLayananMouseClicked
         // TODO add your handling code here:
         String layanan = add_pelayanan.getText();
         String harga = add_harga.getText();
@@ -995,7 +1100,7 @@ public class Menu extends javax.swing.JFrame {
                 stm.execute();
 
                 //5. Menampilkan notif berhasil
-                JOptionPane.showMessageDialog(null, "Tambah data berhasil");
+                JOptionPane.showMessageDialog(null, "Tambah data layanan berhasil!");
 
                 //biar form langsung kosong
                 bersihkan_add();
@@ -1003,40 +1108,11 @@ public class Menu extends javax.swing.JFrame {
                 defaultForm(false);
                 PriceList.setVisible(true);
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Tambah data gagal!");
+                JOptionPane.showMessageDialog(null, "Tambah data layanan gagal!");
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }
-    }//GEN-LAST:event_btnAddLayananActionPerformed
-
-    private void btnAddPriceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPriceListActionPerformed
-        // TODO add your handling code here:
-        defaultForm(false);
-        add_pricelist.setVisible(true);
-    }//GEN-LAST:event_btnAddPriceListActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
-        ImageIcon icon = new ImageIcon("src/main/java/Images/main_icon.png");
-        setIconImage(icon.getImage());
-        
-        DefaultComboBoxModel cb = new DefaultComboBoxModel();
-        try{
-            String cbSQL = "SELECT * FROM jenis";
-            Connection hubung = (Connection)Dbconn.configDB();
-            Statement s = hubung.createStatement();
-            ResultSet r = s.executeQuery(cbSQL);
-            cb.removeAllElements();
-            cb.addElement("Pilih layanan");
-            while(r.next()){
-                cb.addElement(r.getString("pakaian"));
-            }
-            input_layanan.setModel(cb);
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }//GEN-LAST:event_formWindowActivated
+    }//GEN-LAST:event_btnAddLayananMouseClicked
 
     private void tampilan_table(){
             //membuat objek model pada table
@@ -1312,6 +1388,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
