@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 /**
  *
  * @author ASUS
@@ -45,9 +46,16 @@ public class Login extends javax.swing.JFrame {
         login_btn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Laundry Management");
         setBackground(new java.awt.Color(153, 153, 255));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
+        login_img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/2150.png"))); // NOI18N
         login_img.setText("jLabel1");
 
         login_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -186,6 +194,12 @@ public class Login extends javax.swing.JFrame {
         new Signup().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_login_btn1ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon("src/main/java/Images/main_icon.png");
+        setIconImage(icon.getImage());
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
