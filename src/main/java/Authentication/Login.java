@@ -55,6 +55,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        login_img.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\2150.png")); // NOI18N
         login_img.setText("jLabel1");
 
         login_title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -71,6 +72,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         login_btn.setBackground(new java.awt.Color(0, 204, 0));
+        login_btn.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\login.png")); // NOI18N
         login_btn.setText("LOGIN");
         login_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +84,7 @@ public class Login extends javax.swing.JFrame {
         login_title1.setText("MENU LOGIN AKUN");
 
         login_btn1.setBackground(new java.awt.Color(255, 102, 0));
+        login_btn1.setIcon(new javax.swing.ImageIcon("D:\\KULIAH SMT 4\\PEMROGRAMAN BERORIENTASI OBJEK\\CODE PBO\\1. CODE UAS\\FIX\\pbo_kel5_laundry\\src\\main\\java\\Images\\sign-in.png")); // NOI18N
         login_btn1.setText("DAFTAR");
         login_btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +97,7 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(login_title1)
@@ -112,7 +115,7 @@ public class Login extends javax.swing.JFrame {
                                         .addGap(43, 43, 43)
                                         .addComponent(login_btn1))
                                     .addComponent(login_passinput)
-                                    .addComponent(login_userinput, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(login_userinput)))
                             .addComponent(login_title))
                         .addGap(98, 98, 98))))
             .addGroup(layout.createSequentialGroup()
